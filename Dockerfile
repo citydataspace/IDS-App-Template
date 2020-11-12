@@ -22,7 +22,7 @@ ENTRYPOINT ["java","-jar","app.jar"]
 # EVIRONMENT VARIABLES MAPPING FOR IDS DATA APP
 # "ids:representation" --> "ids:appEnvironmentVariables": "$dbUser=sa;$dpPasswd=passwd",
 ENV dbUser="sa"
-ENV dpPasswd="passwd"
+ENV dbPasswd="passwd"
 
 # VOLUME MAPPING FOR IDS DATA APP
 # "ids:representation" --> "ids:appStorageConfiguration": "-v /data",
