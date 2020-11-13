@@ -33,7 +33,7 @@
 		<dependency>
 			<groupId>de.fraunhofer.iais.eis.ids.infomodel</groupId>
 			<artifactId>java</artifactId>
-			<version>4.0.2-20201028.153942-4</version>
+			<version>4.0.2-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
@@ -71,6 +71,14 @@
 		</dependency>
 
     </dependencies>
+
+	<repositories>
+		<repository>
+			<id>eis-public-repo</id>
+			<name>maven-public</name>
+			<url>http://maven.iais.fraunhofer.de/artifactory/eis-ids-public</url>
+		</repository>
+	</repositories>
 
 	<build>
 		<plugins>
