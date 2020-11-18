@@ -74,7 +74,7 @@
         a                              <ids:SmartDataApp> ;
         <ids:appDocumentation>         "Place for an app-related human-readable documentation" ;
         <ids:appEndpoint>              <https://w3id.org/idsa/autogen/appEndpoint/ce2f939d-3145-4b45-aef8-480656ab54eb> , <https://w3id.org/idsa/autogen/appEndpoint/5b22087c-e8aa-4385-8929-b2139ecd3e14> , <https://w3id.org/idsa/autogen/appEndpoint/9af3ec37-0fe1-40a4-9417-f824157a8a8c> , <https://w3id.org/idsa/autogen/appEndpoint/15afdfe0-9e87-4516-8499-48453afe6a15> , <https://w3id.org/idsa/autogen/appEndpoint/f1d9a651-f083-46e0-9ae9-dc3c1461193a> , <https://w3id.org/idsa/autogen/appEndpoint/8e678bdd-7bcf-4b90-a2fb-95c6a8f2b7b8> ;
-        <ids:appEnvironmentVariables>  "$dbUser=sa;$dpPasswd=passwd" ;
+        <ids:appEnvironmentVariables>  "dbUser=sa;dpPasswd=passwd" ;
         <ids:appStorageConfiguration>  "-v /data" .
 
 <https://w3id.org/idsa/autogen/appEndpoint/ce2f939d-3145-4b45-aef8-480656ab54eb>
