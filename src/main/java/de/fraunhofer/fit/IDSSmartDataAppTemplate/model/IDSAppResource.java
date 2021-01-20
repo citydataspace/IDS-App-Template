@@ -101,7 +101,8 @@ public final class IDSAppResource {
                 ._dataAppInformation_(dataAppInformation)
                 .build();
 
-        AppResource appResource = new AppResourceBuilder()
+        //
+        AppResource appResource = new AppResourceBuilder(URI.create("http://appstore.fit.fraunhofer.de/apps/ExampleApp/v01"))
                 ._title_(titles)
                 ._description_(description)
                 ._keyword_(keywords)

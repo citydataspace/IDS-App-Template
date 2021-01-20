@@ -29,27 +29,27 @@ The app endpoints for ```data-input, data-output, processing, configuration, sta
     </thead>
     <tbody>
         <tr>
-            <td><a href="http://localhost:8080/status">http://localhost:8080/status</a></td>
+            <td><a href="http://hostname:8080/status">http://hostname:8080/status</a></td>
             <td>App enpoint for status information (e.g. lifecycle, heartbeat)</td>
         </tr>
         <tr>
-            <td><a href="http://localhost:8080/input">http://localhost:8080/input</a></td>
+            <td><a href="http://hostname:8080/input">http://hostname:8080/input</a></td>
             <td>App endpoint for consuming data to process</td>
         </tr>
         <tr>
-            <td><a href="http://localhost:8080/output">http://localhost:8080/output</a></td>
+            <td><a href="http://hostname:8080/output">http://hostname:8080/output</a></td>
             <td>App endpoint for providing processed data</td>
         </tr>
         <tr>
-            <td><a href="http://localhost:8080/config">http://localhost:8080/config</a></td>
+            <td><a href="http://hostname:8080/config">http://hostname:8080/config</a></td>
             <td>App endpoint for configuration / parameterization</td>
         </tr>
         <tr>
-            <td><a href="http://localhost:8080/process">http://localhost:8080/process</a></td>
+            <td><a href="http://hostname:8080/process">http://hostname:8080/process</a></td>
             <td>App endpoint to start the processing</td>
         </tr>
         <tr>
-            <td><a href="http://localhost:8080/usage">http://localhost:8080/usage</a></td>
+            <td><a href="http://hostname:8080/usage">http://hostname:8080/usage</a></td>
             <td>App endpoint for Usage Control limitations</td>
         </tr>
     </tbody>
@@ -69,11 +69,11 @@ For demonstration purpose, the ```ids/encode``` endpoint delivers the base64 enc
     </thead>
     <tbody>
         <tr>
-            <td><a href="http://localhost:8080/ids">http://localhost:8080/ids</a></td>
+            <td><a href="http://hostname:8080/ids">http://localhost:8080/ids</a></td>
             <td>Endpoint that provides the app's ids information model representation</td>
         </tr>
         <tr>
-            <td><a href="http://localhost:8080/ids/encode">http://localhost:8080/ids/encode</a></td>
+            <td><a href="http://hostname:8080/ids/encode">http://localhost:8080/ids/encode</a></td>
             <td>Endpoint that provides the app's ids information model representation encoded as base64</td>
         </tr>
     </tbody>
@@ -101,8 +101,8 @@ This endpoint is also mapped to the root path of the app template. It provides a
 ## IDS App Representation
 
 An important part of the ids app ecosystem is the app metadata representation according to the ids information model.
-In the following section the different sections of the infomodel representation will be explained in detail.
-The app metadata are delivered in a JSON-LD format. 
+In the following section the different aspects of the infomodel representation will be explained in detail.
+The app metadata inside the ids-ecosystem are exchnaged in a JSON-LD format. 
 This app template uses a java library from Fraunhofer IAIS for the generation and serialization of the app metadata and the corresponding JSON-LD representation. 
 A full version of the metadata representation can be accessed via the ```/ids``` endpoint. In addition, a full JSON-LD and TURTLE version are located in the project ```resource``` folder.
 
@@ -212,8 +212,8 @@ If the app needs some environment variables or volume mountings for execution, t
 
 ## Container generation / Docker-File
 
-To be able to publish the data apps, they have to be packed into a container.
-In this example we use docker-container. The environment variables, port shares and locations required by the application for operation are specified in the docker file according to the Docker documentation.
+To be able to publish the data apps, they have to be packaged into a container.
+In this example we use Docker container. The environment variables, port shares and volume locations required by the application for operation are specified in the docker file according to the Docker documentation.
 However, it is important to make sure that the information is also specified in the app metadata, because the later deployment of an app in a connector depends on the information in the metadata.
 The specification of the parameters is therefore subject to a higher priority. When deploying the app via the AppStore, an app-specific container template is provided from the metadata.
 
