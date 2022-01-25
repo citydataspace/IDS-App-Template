@@ -3,6 +3,9 @@ package de.fraunhofer.fit.IDSSmartDataAppTemplate.controller.api;
 import de.fraunhofer.fit.IDSSmartDataAppTemplate.annotations.AppProcessEndpoint;
 import de.fraunhofer.fit.IDSSmartDataAppTemplate.model.processing.ProcessResult;
 import de.fraunhofer.fit.IDSSmartDataAppTemplate.model.processing.ProcessWrapper;
+import de.fraunhofer.fit.IDSSmartDataAppTemplate.model.data.ExampleData;
+import de.fraunhofer.fit.IDSSmartDataAppTemplate.model.data.Data;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -65,9 +68,15 @@ public class AppProcessController {
     ){
 
         // TODO: Implement App Processing logic here
+        // Simple example constructs an email address at Fraunhofer FIT from first and last name
         try {
             if(processWrapper.getProcessing()){
-                return new ResponseEntity<>(new ProcessResult(true, "App Processing stopped"), HttpStatus.OK);
+            	for(Data d : ExampleData.getExampleData()) {
+            	    if(d.getEmail().equals("")) {
+            	        d.setEmail(d.getFirst_name() + "." + d.getLast_name() + "@fit.fraunhofer.de");
+            	    }
+            	}
+                return new ResponseEntity<>(new ProcessResult(true, "App Processing started"), HttpStatus.OK);
             } else {
                 return new ResponseEntity<>(new ProcessResult(false, "App Processing stopped"), HttpStatus.OK);
             }
